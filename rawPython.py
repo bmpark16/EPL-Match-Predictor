@@ -87,7 +87,7 @@ map_values = {
 
 mapping = MissingDict(**map_values)
 
-mapping["Brighton and Hove Albion"]
+# mapping["Brighton and Hove Albion"]
 
 combined["normalizedName"] = combined["team"].map(mapping)
 combined 
