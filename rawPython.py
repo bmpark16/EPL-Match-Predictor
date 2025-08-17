@@ -44,8 +44,6 @@ def currentForm(team, cols, new_cols) :
 cols = ["gf","ga","sh","sot","dist","fk","pk","pkatt"] 
 new_cols = [f"{c}_rolling" for c in cols]
 
-
-team = groupedByTeam.get_group("Everton").sort_values("date")
 currentForm(team, cols, new_cols)
 
 calculateForm = matches.groupby("team").apply(lambda x: currentForm(x, cols, new_cols))
