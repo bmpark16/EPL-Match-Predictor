@@ -29,8 +29,8 @@ pred = rf.predict(test[predictors])
 acc = accuracy_score(test["target"], pred)
 preScore = precision_score(test["target"], pred)
 
-acc
-preScore
+# acc
+# preScore
 
 groupedByTeam = matches.groupby("team") 
 
@@ -67,11 +67,11 @@ def makePredictions(data,predictors) :
 
 combined, precision = makePredictions(calculateForm, predictors + new_cols)
 
-precision 
+# precision 
 
 combined = combined.merge(calculateForm[["date","team","opponent","result"]], left_index=True, right_index=True)
 
-combined
+# combined
 
 class MissingDict(dict) : 
     __missing__ = lambda self, key:key 
@@ -90,17 +90,17 @@ mapping = MissingDict(**map_values)
 # mapping["Brighton and Hove Albion"]
 
 combined["normalizedName"] = combined["team"].map(mapping)
-combined 
+# combined 
 
 merged = combined.merge(combined, left_on = ["date", "normalizedName"], right_on = ["date", "opponent"])
 
-merged
+# merged
 
 merged[(merged["predicted_x"] == 1) & (merged["predicted_y"] ==0)]["actual_x"].value_counts()
 
-finalPrecisionScore = (27/40)
+# finalPrecisionScore = (27/40)
 
-finalPrecisionScore
+# finalPrecisionScore
 
 
 
